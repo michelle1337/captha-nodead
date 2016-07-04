@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title>Kap4a</title>
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<meta name="author" content="Sokoloff Mihail">
+	<script>
+	$(document).ready(function(){
+		$("#sqrsqr").submit(function(){
+			event.preventDefault();
+		})
+		$("#send").click(function(){
+			var data = {
+				"src" : $("#entr").val()
+			};
+			$.ajax({
+				method: "POST",
+				url: "/captcha",
+				data: data
+			})
+			.success(function(result){
+				$("h1").html(result.answ);
+			})
+			.fail(function(result){
+				$("h1").html(result.answ);
+			});
+		})
+	})		
+	</script>
+</head>
+<body>
+	<h1></h1>
+	<form id="sqrsqr">
+		<input type="text" id="entr"></input>
+		<img src="/captcha.png"><br>
+		<input type="submit" id="send"></input>
+	</form>
+</body>
+</html>

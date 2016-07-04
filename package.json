@@ -1,0 +1,16 @@
+{
+  "name": "captcha",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Sokoloff",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "captchapng": "0.0.1",
+    "express": "4.13.4"
+  }
+}
